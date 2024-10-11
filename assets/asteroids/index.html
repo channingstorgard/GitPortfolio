@@ -8,11 +8,60 @@
     body {
       margin: 0;
       overflow: hidden;
+      background-color: black;
+    }
+    canvas {
+      display: none; /* Initially hide the canvas */
+    }
+    #menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 24px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
+  <!-- Home Screen -->
+  <div id="menu">
+    <h1>Select Game Mode</h1>
+    <button id="single-player-btn">Single Player</button>
+    <button id="two-player-btn">Two Player</button>
+  </div>
+
+  <!-- The game canvas -->
   <canvas></canvas>
-  <script src="index.js"></script>
+
+  <script>
+    // Event listeners for buttons
+    document.getElementById('single-player-btn').addEventListener('click', () => {
+      loadGame('singleplayer.js'); // Load single player script
+    });
+
+    document.getElementById('two-player-btn').addEventListener('click', () => {
+      loadGame('multiplayer.js'); // Load multiplayer script
+    });
+
+    // Function to dynamically load the selected game mode
+    function loadGame(scriptName) {
+      // Hide menu, show canvas, and load the respective game script
+      document.getElementById('menu').style.display = 'none';
+      document.querySelector('canvas').style.display = 'block';
+
+      // Dynamically load the selected game script
+      const script = document.createElement('script');
+      script.src = scriptName;
+      document.body.appendChild(script);
+    }
+  </script>
 </body>
 </html>
