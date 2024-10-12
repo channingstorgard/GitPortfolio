@@ -28,6 +28,12 @@
       font-size: 24px;
       cursor: pointer;
     }
+    #instructions {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 18px;
+      max-width: 600px;
+    }
   </style>
 </head>
 <body>
@@ -36,6 +42,14 @@
     <h1>Select Game Mode</h1>
     <button id="single-player-btn">Single Player</button>
     <button id="two-player-btn">Two Player</button>
+
+    <!-- Instructions Section -->
+    <div id="instructions">
+      <h2>Instructions:</h2>
+      <p><strong>Single Player:</strong> Use <strong>W</strong> to move forward, <strong>A</strong> to rotate left, <strong>D</strong> to rotate right. Press <strong>Space</strong> to shoot.</p>
+      <p><strong>Two Player:</strong> Player 1 uses <strong>W</strong> (move), <strong>A</strong> (rotate left), <strong>D</strong> (rotate right), <strong>Space</strong> (shoot). Player 2 uses <strong>Arrow Keys</strong> for movement and <strong>Shift</strong> to shoot.</p>
+      <p>Avoid asteroids and shoot them down to score points. Each player loses a life when hit. Good luck!</p>
+    </div>
   </div>
 
   <!-- The game canvas -->
