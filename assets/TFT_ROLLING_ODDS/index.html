@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Browser</title>
+</head>
+
+<body>
+    <div style="display:inline-block; vertical-align:top;">
+        <h1> TFT Rolling Odds Calculator </h1>
+    </div>
+    <section id="changelog">
+        <ul>
+            <li><strong></strong>: Set 12 bag sizes and shop odds. 30/25/18/10/9 for each cost, 14/13/13/12/8 distinct champions for each cost. </li>
+        </ul>
+    </section>
+
+    <div class="slidecontainer">
+        <p>Current set:</p>
+        <output id="setOutput">12</output>
+        <input type=range min="11" max="12" value="12" class="slider" id="setRange" style="width: 50px;"></input>
+
+        <p>Desired unit cost:</p>
+        <output id="costOutput">1</output>
+        <input type="range" min="1" max="5" value="1" class="slider" id="costRange"></input>
+
+        <p> Current Level: </p>
+        <output id="lvlOutput">1</output>
+        <input type="range" min="1" max="11" value="1" class="slider" id="lvlRange"></input>
+
+        <p> Number of copies of this unit already out: </p>
+        <input type="text" id="copiesText" value="0" style="height:30px; font-size:18px;"></input>
+      
+      	<p> Number of units of the same cost already out: </p>
+      	<input type="text" id="poolText" value="0"style="height:30px; font-size:18px;"></input>
+
+        <p> Amount of gold you want to roll down: </p>
+        <input type="text" id="goldText" value="30"style="height:30px; font-size:18px;"></input>
+      
+
+    </div>
+
+    <div style="position: relative; height:60vh; width:90vw">
+        <h2 id="goldForEV1"></h2>
+        <h2 id="goldForEV2"></h2>
+        <h2 id="goldForEV3"></h2>
+        <h2 id="goldForEV4"></h2>
+        <h2 id="goldForEV5"></h2>
+        <h2 id="goldForEV6"></h2>
+        <h2 id="goldForEV7"></h2>
+        <h2 id="goldForEV8"></h2>
+        <h2 id="goldForEV9"></h2>
+
+        <canvas id="myChart"></canvas>
+
+    </div>
+
+    <script src = "https://cdn.jsdelivr.net/npm/chart.js"> </script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
